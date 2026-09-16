@@ -199,6 +199,13 @@ renderSettings();
 renderDayList();
 renderTotals();
 
+// Extra vangnet: expliciet opslaan zodra de app naar de achtergrond gaat,
+// mocht een losse invoer-gebeurtenis onderweg zijn gemist.
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'hidden') persist();
+});
+window.addEventListener('pagehide', persist);
+
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('service-worker.js').catch(() => {});

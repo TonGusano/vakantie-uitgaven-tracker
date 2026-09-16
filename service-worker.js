@@ -1,5 +1,5 @@
 // Bump this whenever a file in ASSETS changes, so returning visitors get the new version.
-const CACHE_NAME = 'vakantie-uitgaven-tracker-v1';
+const CACHE_NAME = 'vakantie-uitgaven-tracker-v2';
 // Keep this in sync with the actual files — nothing added here won't work offline.
 const ASSETS = [
   './',
